@@ -19,7 +19,7 @@ class ProductManager:
 
 class PriceCalculator:
     @staticmethod
-    def calculate_total_price(products:DiscountStrategy, discount_strategy=None):
+    def calculate_total_price(products, discount_strategy:DiscountStrategy=None):
         total = 0
         for product in products:
             if discount_strategy:
