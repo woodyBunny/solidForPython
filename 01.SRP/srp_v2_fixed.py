@@ -11,7 +11,6 @@ class ProductManager:
         self.products.append(product)
 
 class PriceCalculator:
-    @staticmethod
     def calculate_total_price(products, discount_type:str=""):
         total = 0
         for product in products:
