@@ -1,6 +1,9 @@
-class DiscountStrategy:
+from abc import ABC, abstractmethod
+
+class DiscountStrategy(ABC):
+    @abstractmethod
     def apply_discount(self, price):
-        return price
+        pass
 
 class Product:
     def __init__(self, name, price):
@@ -16,7 +19,7 @@ class ProductManager:
 
 class PriceCalculator:
     @staticmethod
-    def calculate_total_price(products, discount_strategy=None):
+    def calculate_total_price(products, discount_strategy:DiscountStrategy=None):
         total = 0
         for product in products:
             if discount_strategy:
